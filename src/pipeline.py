@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, UTC
 import fiona
 from fiona.crs import CRS
 
@@ -40,7 +40,7 @@ def create_geopackage(filepath: str):
                 'properties': {
                     'name': 'Makerere University Campus',
                     'amenity': 'university',
-                    'updated_at': datetime.utcnow().isoformat()
+                    'updated_at': datetime.now(UTC)
                 }
             },
             {
@@ -48,7 +48,7 @@ def create_geopackage(filepath: str):
                 'properties': {
                     'name': 'MUST Main Campus',
                     'amenity': 'university',
-                    'updated_at': datetime.utcnow().isoformat()
+                    'updated_at': datetime.now(UTC)
                 }
             }
         ]
